@@ -1,0 +1,56 @@
+---
+- name: resolve platform specific vars
+  include_vars: '{{ item }}'
+  with_first_found:
+    - files:
+        - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
+        - '{{ ansible_distribution }}.yml'
+        - '{{ ansible_os_family }}.yml'
+      skip: true
+      paths:
+        - '{{ role_path }}/vars'
+- name: check for install in {{ nerdctl_install_dir }}
+  become: true
+  stat:
+    path: '{{ nerdctl_install_dir }}'
+  changed_when: false
+  register: nerdctl_binary
+- when: not nerdctl_binary.stat.exists
+  block:
+    - name: downloading {{ nerdctl_url }} to {{ nerdctl_tmp_archive }}
+      become: true
+      become_user: root
+      get_url:
+        url: '{{ nerdctl_url }}'
+        dest: '{{ nerdctl_tmp_archive }}'
+        mode: 0644
+        checksum: '{{ nerdctl_checksum }}'
+    - name: mkdir {{ nerdctl_install_dir }}
+      become: true
+      become_user: root
+      file:
+        path: '{{ nerdctl_install_dir }}'
+        state: directory
+        mode: 0755
+    - name: unarchiving {{ nerdctl_tmp_archive }} to {{ nerdctl_install_dir }}
+      become: true
+      become_user: root
+      unarchive:
+        remote_src: true
+        src: '{{ nerdctl_tmp_archive }}'
+        dest: '{{ nerdctl_install_dir }}'
+        creates: '{{ nerdctl_install_exe }}'
+  always:
+    - name: rm {{ nerdctl_tmp_archive }}
+      become: true
+      become_user: root
+      file:
+        path: '{{ nerdctl_tmp_archive }}'
+        state: absent
+- name: linking {{ nerdctl_link }} to {{ nerdctl_install_exe }}
+  become: true
+  become_user: root
+  file:
+    src: '{{ nerdctl_install_exe }}'
+    dest: '{{ nerdctl_link }}'
+    state: link

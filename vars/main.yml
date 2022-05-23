@@ -1,0 +1,11 @@
+---
+# vars file for nerdctl
+nerdctl_platform: '{{ nerdctl_os }}-{{ nerdctl_arch }}'
+nerdctl_name: nerdctl-{{ nerdctl_ver }}-{{ nerdctl_platform }}
+nerdctl_archive: '{{ nerdctl_name }}.{{ nerdctl_archive_type | default("tar.gz") }}'
+nerdctl_url: '{{ nerdctl_mirror }}/v{{ nerdctl_ver }}/{{ nerdctl_archive }}'
+nerdctl_tmp_archive: '{{ nerdctl_tmp_dir | default("/tmp") }}/{{ nerdctl_archive }}'
+nerdctl_checksum: '{{ nerdctl_checksums[nerdctl_ver][nerdctl_platform] }}'
+nerdctl_install_dir: '{{ nerdctl_parent_install_dir }}/{{ nerdctl_name }}'
+nerdctl_install_exe: '{{ nerdctl_install_dir }}/nerdctl'
+nerdctl_link: '{{ nerdctl_parent_install_dir }}/bin/nerdctl'
