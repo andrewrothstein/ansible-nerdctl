@@ -1,5 +1,7 @@
 ---
 # vars file for nerdctl
+nerdctl_os: '{{ ansible_system | lower }}'
+nerdctl_arch: '{{ nerdctl_arch_map[ansible_architecture] }}'
 nerdctl_platform: '{{ nerdctl_os }}-{{ nerdctl_arch }}'
 nerdctl_name: nerdctl-{{ nerdctl_ver }}-{{ nerdctl_platform }}
 nerdctl_archive: '{{ nerdctl_name }}.{{ nerdctl_archive_type | default("tar.gz") }}'

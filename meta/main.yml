@@ -23,8 +23,8 @@ galaxy_info:
         - 9
     - name: Fedora
       versions:
-        - 35
         - 36
+        - 37
     - name: Ubuntu
       versions:
         - bionic
@@ -33,6 +33,3 @@ galaxy_info:
   galaxy_tags:
     - development
   role_name: nerdctl
-
-dependencies:
-  - andrewrothstein.unarchive-deps

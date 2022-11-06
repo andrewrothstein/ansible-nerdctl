@@ -32,6 +32,7 @@ dl_ver () {
     fi
 
     printf "  '%s':\n" $ver
+    dl $lchecksum $ver freebsd amd64
     dl $lchecksum $ver linux amd64
     dl $lchecksum $ver linux arm-v7
     dl $lchecksum $ver linux arm64
@@ -41,4 +42,4 @@ dl_ver () {
     dl $lchecksum $ver windows amd64
 }
 
-dl_ver ${1:-0.22.2}
+dl_ver ${1:-1.0.0}
