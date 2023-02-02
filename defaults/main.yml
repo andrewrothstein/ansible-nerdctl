@@ -1,6 +1,6 @@
 ---
 # defaults file for nerdctl
-nerdctl_ver: 1.1.0
+nerdctl_ver: 1.2.0
 nerdctl_arch_map:
   aarch64: arm64
   ppc64le: ppc64le
@@ -127,3 +127,21 @@ nerdctl_checksums:
     linux-s390x: sha256:5bed42e2ddcc9fbbd887f670b0771fdffd3856f23f16401f709266a4fbe9d1a6
     # https://github.com/containerd/nerdctl/releases/download/v1.1.0/nerdctl-1.1.0-windows-amd64.tar.gz
     windows-amd64: sha256:bfb896814e633649efa3e7361862075cde41816faff8d92a3c85745ff9e45be4
+  # https://github.com/containerd/nerdctl/releases/download/v1.2.0/SHA256SUMS
+  '1.2.0':
+    # https://github.com/containerd/nerdctl/releases/download/v1.2.0/nerdctl-1.2.0-freebsd-amd64.tar.gz
+    freebsd-amd64: sha256:a00df69385aa1597a571830d914fe259e9d68c3a58366a1532771a14f3bdde6b
+    # https://github.com/containerd/nerdctl/releases/download/v1.2.0/nerdctl-1.2.0-linux-amd64.tar.gz
+    linux-amd64: sha256:9d6f3427a1c0af0c38a0a707751b424d04cca13b82c62ad03ec3f4799c2de48c
+    # https://github.com/containerd/nerdctl/releases/download/v1.2.0/nerdctl-1.2.0-linux-arm-v7.tar.gz
+    linux-arm-v7: sha256:d42b3329c3c99d6243a4efa0f33e9324a26597e175dd7fdae574270bf3e26f28
+    # https://github.com/containerd/nerdctl/releases/download/v1.2.0/nerdctl-1.2.0-linux-arm64.tar.gz
+    linux-arm64: sha256:79d71bbdd0b433838d64ef96d26eb9648911f8d5e5ab494359d32d0ff09abb34
+    # https://github.com/containerd/nerdctl/releases/download/v1.2.0/nerdctl-1.2.0-linux-ppc64le.tar.gz
+    linux-ppc64le: sha256:64fb56543ee69dafa57691a9dc3b756f9cd6fec021ba1c591680d16ebb8d109d
+    # https://github.com/containerd/nerdctl/releases/download/v1.2.0/nerdctl-1.2.0-linux-riscv64.tar.gz
+    linux-riscv64: sha256:9bebdca710b45ed3b8f2ae5a11135974ccbbb0cd266429e0dcedff3a016abd1d
+    # https://github.com/containerd/nerdctl/releases/download/v1.2.0/nerdctl-1.2.0-linux-s390x.tar.gz
+    linux-s390x: sha256:e675ef602106ed386e5effc06dc49a04b6772d3e08669b399fb7d73346c92325
+    # https://github.com/containerd/nerdctl/releases/download/v1.2.0/nerdctl-1.2.0-windows-amd64.tar.gz
+    windows-amd64: sha256:63d56de6629583602b8d8bcff4ffdf3245990d823fbc028d7ab79551cd180472
