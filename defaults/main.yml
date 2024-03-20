@@ -1,6 +1,6 @@
 ---
 # defaults file for nerdctl
-nerdctl_ver: 1.7.2
+nerdctl_ver: 1.7.5
 nerdctl_arch_map:
   aarch64: arm64
   ppc64le: ppc64le
@@ -343,3 +343,57 @@ nerdctl_checksums:
     linux-s390x: sha256:e2b3ce486d0913f86a771039cfbf911524d1f0a1ad24c8a6239d48cc90778679
     # https://github.com/containerd/nerdctl/releases/download/v1.7.2/nerdctl-1.7.2-windows-amd64.tar.gz
     windows-amd64: sha256:33b3dde2a9bd38360ab31e65cb0c1deb2d9f24e9e7a6fd9ab377fe6f2cd58fbf
+  # https://github.com/containerd/nerdctl/releases/download/v1.7.3/SHA256SUMS
+  '1.7.3':
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.3/nerdctl-1.7.3-freebsd-amd64.tar.gz
+    freebsd-amd64: sha256:928d5441fe9635c290eb460402fb5b76ffa68892c0cd14c419a19068dcb90a97
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.3/nerdctl-1.7.3-linux-amd64.tar.gz
+    linux-amd64: sha256:ee93ffe6f90e50bde153a9a0dd779594e0bc13a26949053965958b91b6dffdd0
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.3/nerdctl-1.7.3-linux-arm-v7.tar.gz
+    linux-arm-v7: sha256:44369f34a98e5955eb02e41779b1a470332194e4c2bef136fe471943eaf8057a
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.3/nerdctl-1.7.3-linux-arm64.tar.gz
+    linux-arm64: sha256:e4f16b78d884768f6997558130146ba9bd7846828b19fa2ca8e8eda988953fd7
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.3/nerdctl-1.7.3-linux-ppc64le.tar.gz
+    linux-ppc64le: sha256:e63ae0a8f5ccd12877ff944b609d0a4c55c97ba79808ab16c7dc7e99fd8f3dd6
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.3/nerdctl-1.7.3-linux-riscv64.tar.gz
+    linux-riscv64: sha256:02b718f86652c228c0ef93fb8dce3190715da4962277b7441090db8f4635073e
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.3/nerdctl-1.7.3-linux-s390x.tar.gz
+    linux-s390x: sha256:61890075cd46fbf0db1a9de93e951a48902027d6d5239eb86ed87782512c3ef9
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.3/nerdctl-1.7.3-windows-amd64.tar.gz
+    windows-amd64: sha256:fe0c66761c9acd93766f395607bc3041a7e2db3d1bfa7b763ab2b8866eaa20d2
+  # https://github.com/containerd/nerdctl/releases/download/v1.7.4/SHA256SUMS
+  '1.7.4':
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.4/nerdctl-1.7.4-freebsd-amd64.tar.gz
+    freebsd-amd64: sha256:92c9cc91a87410697eaf4fd14035098d67973c844e7b9130e72dee34d1279b9f
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.4/nerdctl-1.7.4-linux-amd64.tar.gz
+    linux-amd64: sha256:71aee9d987b7fad0ff2ade50b038ad7e2356324edc02c54045960a3521b3e6a7
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.4/nerdctl-1.7.4-linux-arm-v7.tar.gz
+    linux-arm-v7: sha256:91d3a8bcc2247dd80f8f5769419e6f344dea412937de4c318f65d8e9bf01355b
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.4/nerdctl-1.7.4-linux-arm64.tar.gz
+    linux-arm64: sha256:d8df47708ca57b9cd7f498055126ba7dcfc811d9ba43aae1830c93a09e70e22d
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.4/nerdctl-1.7.4-linux-ppc64le.tar.gz
+    linux-ppc64le: sha256:97c99ab6030ffac1fb780fe012de06a36512b17b13de5c99445468b5a5fe5a62
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.4/nerdctl-1.7.4-linux-riscv64.tar.gz
+    linux-riscv64: sha256:7f3d07485e57ba287ee6ba566af94a3b81ef62c04d51750b46eb24fd421b4e08
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.4/nerdctl-1.7.4-linux-s390x.tar.gz
+    linux-s390x: sha256:48e478ed87f7bb02e2ccc1482ac692ccc98095e9c4b7b30b1b9bb448cbc51fda
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.4/nerdctl-1.7.4-windows-amd64.tar.gz
+    windows-amd64: sha256:2734dedd6ca99a7bcf989247b555361963a8b78728a263a8c5d0e563f6c3910a
+  # https://github.com/containerd/nerdctl/releases/download/v1.7.5/SHA256SUMS
+  '1.7.5':
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.5/nerdctl-1.7.5-freebsd-amd64.tar.gz
+    freebsd-amd64: sha256:1322705c7ecd5b1bdb77cd1ae7db76d89fc757403c61d4b602773f2e5cafda05
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.5/nerdctl-1.7.5-linux-amd64.tar.gz
+    linux-amd64: sha256:775f8bddd5e93acc4162c568dd6b84d5925549180991b83cfd4b7e33d4844921
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.5/nerdctl-1.7.5-linux-arm-v7.tar.gz
+    linux-arm-v7: sha256:2d258a7d67e9fa808424ad42f9299a0feb318cafd2758f0287748acedeee4c0d
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.5/nerdctl-1.7.5-linux-arm64.tar.gz
+    linux-arm64: sha256:a53d87fc7d1f4ffeec55e5e08d2397b02ada0d334874c3cece306ad36f828a6c
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.5/nerdctl-1.7.5-linux-ppc64le.tar.gz
+    linux-ppc64le: sha256:8e0891f608144d8d751070edea5cd98d2a76a053ad7fa6b9d4aae94a700aaea2
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.5/nerdctl-1.7.5-linux-riscv64.tar.gz
+    linux-riscv64: sha256:889a0b48771ab469978f728b4b6a4c368ca771a17f65af2b4da1fd0f0d4a5cec
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.5/nerdctl-1.7.5-linux-s390x.tar.gz
+    linux-s390x: sha256:2ffd0dda919e8dfb6e59e12b7e759cd12bcd749f4441977eea0a1e8f268f177a
+    # https://github.com/containerd/nerdctl/releases/download/v1.7.5/nerdctl-1.7.5-windows-amd64.tar.gz
+    windows-amd64: sha256:9d69fc280ab0481cb3208e25e589371b9f22c62fa9300912538ff83e377c500f

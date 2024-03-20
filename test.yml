@@ -1,10 +1,13 @@
 ---
-- hosts: all
+- name: Testing andrewrothstein.nerdctl
+  hosts: all
   roles:
-  - role: '{{ playbook_dir }}'
+    - role: '{{ playbook_dir }}'
   tasks:
-  - command: /usr/local/bin/nerdctl --version
-    register: nerdctl_test_output
-  - name: nerdctl --version
-    debug:
-      msg: '{{ nerdctl_test_output.stdout }}'
+    - name: Executing 'nerdctl --version'
+      ansible.builtin.command: /usr/local/bin/nerdctl --version
+      changed_when: false
+      register: nerdctl_test_output
+    - name: Output of 'nerdctl --version'
+      ansible.builtin.debug:
+        msg: '{{ nerdctl_test_output.stdout }}'

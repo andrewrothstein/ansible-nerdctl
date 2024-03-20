@@ -1,8 +1,9 @@
 ---
-- include_role:
+- name: Installing andrewrothstein.unarchivedeps
+  ansible.builtin.include_role:
     name: andrewrothstein.unarchivedeps
-- name: resolve platform specific vars
-  include_vars: '{{ item }}'
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
     - files:
         - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
@@ -11,48 +12,49 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: check for install in {{ nerdctl_install_dir }}
+- name: Check for install in {{ nerdctl_install_dir }}
   become: true
-  stat:
+  ansible.builtin.stat:
     path: '{{ nerdctl_install_dir }}'
   changed_when: false
   register: nerdctl_binary
-- when: not nerdctl_binary.stat.exists
+- name: Downloading and installing nerdctl
+  when: not nerdctl_binary.stat.exists
   block:
-    - name: downloading {{ nerdctl_url }} to {{ nerdctl_tmp_archive }}
+    - name: Downloading {{ nerdctl_url }} to {{ nerdctl_tmp_archive }}
       become: true
       become_user: root
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ nerdctl_url }}'
         dest: '{{ nerdctl_tmp_archive }}'
-        mode: 0644
+        mode: '644'
         checksum: '{{ nerdctl_checksum }}'
-    - name: mkdir {{ nerdctl_install_dir }}
+    - name: Mkdir {{ nerdctl_install_dir }}
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ nerdctl_install_dir }}'
         state: directory
-        mode: 0755
-    - name: unarchiving {{ nerdctl_tmp_archive }} to {{ nerdctl_install_dir }}
+        mode: '755'
+    - name: Unarchiving {{ nerdctl_tmp_archive }} to {{ nerdctl_install_dir }}
       become: true
       become_user: root
-      unarchive:
+      ansible.builtin.unarchive:
         remote_src: true
         src: '{{ nerdctl_tmp_archive }}'
         dest: '{{ nerdctl_install_dir }}'
         creates: '{{ nerdctl_install_exe }}'
   always:
-    - name: rm {{ nerdctl_tmp_archive }}
+    - name: Rm {{ nerdctl_tmp_archive }}
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ nerdctl_tmp_archive }}'
         state: absent
-- name: linking {{ nerdctl_link }} to {{ nerdctl_install_exe }}
+- name: Linking {{ nerdctl_link }} to {{ nerdctl_install_exe }}
   become: true
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ nerdctl_install_exe }}'
     dest: '{{ nerdctl_link }}'
     state: link
